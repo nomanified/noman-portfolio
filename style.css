@@ -504,9 +504,109 @@ img {
 }
 
 .project-link {
+    display: inline-block;
     color: #8179ff;
     font-size: 14px;
     font-weight: 600;
+    margin-right: 18px;
+    margin-top: 5px;
+}
+
+.project-link:hover {
+    color: #a29cff;
+}
+
+
+/* =========================
+   PARKWISE UI/UX
+========================= */
+
+.parkwise-ui-section {
+    background: #0b0f19;
+}
+
+.ui-description {
+    max-width: 700px;
+    margin: 15px auto 0;
+    color: #9fa3b1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.parkwise-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.ui-card {
+    background: #101522;
+
+    border: 1px solid #1d2435;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.ui-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #6c63ff;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(108, 99, 255, 0.08);
+}
+
+.ui-card img {
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: contain;
+
+    background: #080b14;
+
+    border-radius: 11px;
+
+    border: 1px solid #1d2435;
+}
+
+.ui-card-content {
+    padding: 18px 5px 8px;
+}
+
+.ui-number {
+    display: inline-block;
+
+    color: #7c74ff;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.ui-card h3 {
+    color: #ffffff;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+.ui-card p {
+    color: #8f94a5;
+
+    font-size: 13px;
+
+    line-height: 1.6;
 }
 
 
@@ -589,9 +689,13 @@ img {
 
 .service-card {
     background: #101522;
+
     border: 1px solid #1d2435;
+
     padding: 32px;
+
     border-radius: 15px;
+
     transition: 0.3s;
 }
 
@@ -602,7 +706,9 @@ img {
 
 .service-icon {
     color: #7c74ff;
+
     margin-bottom: 20px;
+
     font-weight: bold;
 }
 
@@ -612,6 +718,7 @@ img {
 
 .service-card p {
     color: #969baa;
+
     font-size: 14px;
 }
 
@@ -679,11 +786,14 @@ img {
     background: #101522;
 
     border: 1px solid #252c3d;
+
     border-radius: 8px;
 
     color: white;
 
     outline: none;
+
+    font-family: inherit;
 }
 
 .contact-form input:focus,
@@ -702,24 +812,31 @@ img {
 
 footer {
     border-top: 1px solid #1d2435;
+
     padding: 25px 0;
 }
 
 .footer-content {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 20px;
 }
 
 .footer-content p {
     color: #747989;
+
     font-size: 13px;
 }
 
 .footer-content a {
     color: #858a99;
+
     font-size: 13px;
+
     margin-left: 18px;
 }
 
@@ -760,6 +877,7 @@ footer {
         width: 100%;
 
         display: none;
+
         flex-direction: column;
 
         background: #0c101a;
@@ -779,6 +897,7 @@ footer {
 
     .hero-content {
         flex-direction: column-reverse;
+
         text-align: center;
     }
 
@@ -800,6 +919,10 @@ footer {
     .skills-grid,
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .parkwise-gallery {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -828,6 +951,7 @@ footer {
 
     .education-card {
         flex-direction: column;
+
         text-align: center;
     }
 
@@ -835,13 +959,143 @@ footer {
         justify-content: center;
     }
 
+    .project-link {
+        display: block;
+
+        margin-right: 0;
+
+        margin-bottom: 10px;
+    }
+
+    .ui-card img {
+        height: 400px;
+    }
+
     .footer-content {
         flex-direction: column;
+
         text-align: center;
     }
 
     .footer-content a {
         margin: 0 8px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .ui-card img {
+        height: 330px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+}
+/* =========================
+   PARKWISE IMAGE PREVIEW
+========================= */
+
+.image-preview-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.90);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 9999;
+}
+
+.image-preview-content {
+    position: relative;
+
+    max-width: 900px;
+    max-height: 90vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.image-preview-content img {
+    max-width: 100%;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-preview {
+    position: absolute;
+
+    top: -45px;
+    right: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #6c63ff;
+
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 38px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.close-preview:hover {
+    background: #7c74ff;
+
+    transform: scale(1.08);
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .image-preview-overlay {
+        padding: 15px;
+    }
+
+    .image-preview-content img {
+        max-height: 80vh;
+    }
+
+    .close-preview {
+        top: -48px;
+        right: 5px;
     }
 
 }
